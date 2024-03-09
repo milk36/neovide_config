@@ -9,6 +9,7 @@ require("colorscheme")
 
 
 -- 载入插件配置
+-- 文件树
 require("plugin-config.nvim-tree")
 -- 页签栏
 require("plugin-config.bufferline")
