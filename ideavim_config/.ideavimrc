@@ -1,0 +1,303 @@
+" =============================================
+" 插件
+" =============================================
+
+"Plug 'preservim/nerdtree'
+set NERDTree
+
+" ================================================================================================
+" 👻👻👻 Which-Key 👻👻👻
+" ================================================================================================
+set which-key
+set notimeout
+let g:WhichKey_FontSize = 16
+
+" =============================================
+" 基础配置
+" =============================================
+
+" 设置字体
+set guifont = Intel\ One\ Mono\ Light:h12
+
+"--将搜索匹配的文本高亮显示
+set hlsearch
+
+"--递增搜索功能：在执行搜索（使用 / 或 ? 命令）时，
+"Vim 会在您输入搜索模式的过程中逐步匹配并高亮显示匹配的文本。
+set incsearch
+
+"--在搜索时忽略大小写
+set ignorecase
+set smartcase
+set showmode
+
+"--当前行的绝对行号
+set number
+
+"--设置相对行号
+set relativenumber
+
+"设置在光标距离窗口顶部或底部一定行数时，开始滚动屏幕内容的行为
+set scrolloff=3
+set history=1000
+
+" 系统剪贴板
+set clipboard=unnamed
+
+"--设置返回normal模式时回到英文输入法
+set keep-english-in-normal
+
+" =============================================
+" 非 Leader 键设置
+" =============================================
+
+" 保存文件 Ctrl+s
+inoremap <c-s> <Esc>:w<cr>
+nnoremap <c-s> <Esc>:w<cr>
+
+" 恢复/Redo
+nmap U <c-r>
+
+"--普通模式下使用回车键，向下/向上 增加一行
+"nmap <CR> o<Esc>
+"nmap <S-Enter> O<Esc>
+
+"--将 jj 和 jk 映射为 <Esc>, 快速退出插入模式
+imap jj <Esc>
+"imap jk <Esc>
+vmap i <Esc>
+
+"将Ctrl + s 映射为保存文档(也可以在VIM设置里将此快捷键设置为IDEA的快捷键)
+nmap <C-S> :action SaveAll<cr>
+imap <C-S> <Esc>:action　SaveAll<cr>
+
+" 行首行尾移动
+map H ^
+map L $
+" 块间移动
+map J }
+map K {
+
+
+" =============================================
+" Leader 键设置
+" =============================================
+
+" <leader>键设置（本配置为空格键)
+let mapleader=' '
+
+" View mode
+let g:WhichKeyDesc_ViewMode= "<leader>v ViewMode"
+" 全屏模式
+map <leader>vf <Action>(ToggleFullScreen)
+" 免打扰模式
+map <leader>vv <Action>(ToggleDistractionFreeMode)
+" 演示模式
+map <leader>vp <Action>(TogglePresentationMode)
+
+" buffer (buffer < window < tab)
+" 关闭页签操作
+let g:WhichKeyDesc_CloseTable = "<leader>x CloseTable"
+" 关闭当前页签
+nmap <leader>xx <Action>(CloseContent)
+" 关闭所有页签
+nmap <leader>xa <Action>(CloseAllEditors)
+" 关闭其他页签
+nmap <leader>xo <Action>(CloseAllEditorsButActive)
+" 关闭固定页签
+nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
+
+" window
+" 切换标签页
+" <A-Right>
+nmap <C-Tab> <Action>(PreviousTab)
+nmap <Tab> <Action>(NextTab)
+" 固定/取消固定 页签
+nmap <leader>p <Action>(PinActiveEditorTab)
+
+
+" =============================================
+" 分屏操作
+" =============================================
+let g:WhichKeyDesc_SplitTab = "<leader>S SplitTab"
+map <leader>Sh <Action>(MoveTabLeft)
+map <leader>Sj <Action>(MoveTabDown)
+map <leader>Sk <Action>(MoveTabUp)
+map <leader>Sl <Action>(MoveTabRight)
+map <leader>SH <Action>(SplitHorizontally)
+map <leader>SV <Action>(SplitVertically)
+
+" 分屏之间跳转操作
+"nmap <C-p> <Action>(JumpToLastWindow)
+nmap <M-i> <Action>(PrevSplitter)
+nmap <M-o> <Action>(NextSplitter)
+" 窗口间跳转
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+
+" =============================================
+" Goto
+" =============================================
+
+" 方法间移动 (Move between methods)
+map [f <Action>(MethodUp)
+map ]f <Action>(MethodDown)
+
+" 前进/后退
+nmap <C-i> <Action>(Back)
+nmap <C-o> <Action>(Forward)
+
+" <C-U> 跳转到上级方法
+map gu <Action>(GotoSuperMethod)
+" <A-C-B> 跳转到声明/跳转到实现类
+map gi <Action>(GotoImplementation)
+" <C-B> 跳转到声明
+map gd <Action>(GotoDeclaration)
+map gt <Action>(GotoTest)
+" F2 跳转到下一个错误或警告
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+" <c-q> 快速文档
+map gh <Action>(QuickJavaDoc)
+" 快速操作
+map gH <Action>(QuickActions)
+" 重构菜单
+map gr <Action>(RefactoringMenu)
+" 显示意图/Alt+Enter
+map ga <Action>(ShowIntentionActions)
+" 显示使用
+map gf <Action>(ShowUsages)
+" 查找使用/Alt+F7
+map gF <Action>(FindUsages)
+
+" =============================================
+" Code
+" =============================================
+
+" 代码上下移动行 (Move line up/down)
+map <M-k> <Action>(MoveLineUp)
+map <M-j> <Action>(MoveLineDown)
+
+" 代码折叠/展开 (Code fold/expand)
+map zm <Action>(CollapseRegion)
+map za <Action>(ExpandRegion)
+" 折叠/展开所有
+map zM <Action>(CollapseAllRegions)
+map zR <Action>(ExpandAllRegions)
+
+" 注释 (Comment)
+map gc <Action>(CommentByLineComment)
+
+"nnoremap <leader>k <Esc>:echo 'test keymap'<cr>
+
+" ===================== Extract/提取 ========================
+
+let g:WhichKeyDesc_Extract = "<leader>e Extract"
+" extract method/function 将代码提取为一个独立的方法(Ctrl + Alt + M)
+vmap <leader>em :action ExtractMethod<cr>
+
+" extract constant 引入常量(Ctrl + Alt + C)
+vmap <leader>ec :action IntroduceConstant<cr>
+
+" extract field （引入字段）的重构操作:将选中的代码片段转化为一个新的字段，并自动将选中的代码片段替换为对该字段的引用(Ctrl + Alt + F)
+vmap <leader>ef :action IntroduceField<cr>
+
+" extract variable （引入变量）的重构操作:将选中的代码片段抽取为一个新的变量，并自动替换选中的代码片段为新的变量引用(Ctrl + Alt + V)
+vmap <leader>ev :action IntroduceVariable<cr>
+
+
+" ===================== Search/搜索 ========================
+let g:WhichKeyDesc_Search = "<leader>s Search"
+
+" 搜索所有/ 相当于IDEA的两次shift按钮
+nnoremap <Leader>sa :action SearchEverywhere<CR>
+" 跳转到操作
+map <leader>sA <Action>(GotoAction)
+" 跳转到类
+map <leader>sc <Action>(GotoClass)
+" 跳转到符号
+map <leader>ss <Action>(GotoSymbol)
+" <C-S-F> 跳转到文件
+map <leader>sf <Action>(GotoFile)
+
+" 在文件中查找
+nnoremap<Leader>sF :action FindInPath<CR>
+
+" (vim自带的搜索)
+nnoremap / /
+
+" 清除高亮
+nnoremap <BS><BS> :noh<cr>
+
+" ===================== easymotion 设置 ========================
+" easymotion 设置
+set easymotion
+
+" easymotion 设置 两字符搜索
+nmap <leader><leader>s <Plug>(easymotion-s2)
+
+
+" ===================== Goto/跳转 ========================
+
+" <c-F12> 文件结构
+nnoremap <c-BS> :action FileStructurePopup<CR>
+
+" idea内置快捷键alt+F1 (使用快捷键 空格+m)
+nnoremap <Leader>m :action SelectIn<CR>
+
+" ===================== Buffer Action ========================
+
+let g:WhichKeyDesc_BufAction = "<leader>b BufAction"
+" <c-f> 查找
+nnoremap <leader>bf :action Find<CR>
+
+" <c-r> 替换
+nnoremap <leader>br :action Replace<CR>
+
+" 重命名元素
+nmap <leader>bn <Action>(RenameElement)
+
+" 最近打开的文件列表
+nmap <leader>be <Action>(RecentFiles)
+
+" 最近编辑的文件列表
+map <leader>bc <Action>(RecentChangedFiles)
+
+" <C-A> 全选
+"nnoremap ca :action $SelectAll<cr>
+nnoremap <leader>ba gg V G<cr>
+
+" <c-w> 选中单词
+"nnoremap <leader>cw :action EditorSelectWord<CR>
+
+" ===================== 浏览快捷键 ========================
+
+" javadoc <c-q>
+"nnoremap cq :action QuickJavaDoc<cr>
+
+" ===================== 终端 (Terminal) ========================
+let g:WhichKeyDesc_Terminal = "<leader>t Terminal"
+" 打开终端并进入项目根目录 (ActivateTerminal with project root dir)
+map <leader>tt <Action>(ActivateTerminalToolWindow)
+" 打开终端并进入当前目录 (OpenTerminal with current dir)
+map <leader>tc <Action>(Terminal.OpenInTerminal)
+
+" ===================== Run/运行 ========================
+let g:WhichKeyDesc_RunAction = "<leader>r RunAction"
+" <C-S-F10> 运行当前类
+nnoremap <Leader>rr :action RunClass<CR>
+
+" <S-F10> 运行当前文件
+nnoremap <Leader>ru :action Run<CR>
+
+" ===================== 插件 ========================
+
+" NERDTree 设置
+" 开启/关闭文件树
+nnoremap <leader>O :NERDTreeToggle<CR>
+
+" 当前文件显示在文件树中
+nnoremap <leader>V :NERDTreeFind<CR>
