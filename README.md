@@ -11,3 +11,4 @@
 - neovide
 - vscode_vim
 - ideavime
+  - [参考大家的配置方式](https://github.com/JetBrains/ideavim/discussions/303?sort=top)
