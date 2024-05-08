@@ -4,7 +4,8 @@ call plug#begin('~/ . vim/plugged')
 " 启动页
 Plug 'mhinz/vim-startify'
 " catppuccin 主题
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+" 要求: vim >= 9 使用 lua >= 5.1 编译
+" Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " 配色
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
@@ -45,9 +46,9 @@ set clipboard=unnamed
 set relativenumber
 
 " 主题配色设置
-colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-"set background=dark
-"colorscheme gruvbox 
+" colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+set background=dark
+colorscheme gruvbox 
 " 一些方便的映射
 " 设置leader键为空格
 let mapleader=' ' 
@@ -62,6 +63,8 @@ nnoremap K {
 nnoremap <leader>w <Esc>:w<cr>
 " 空格+q 保存并退出文件
 nnoremap <leader>q <Esc>:wq<cr>
+" 关闭搜索高亮
+nnoremap <bs><bs> <Esc>:nohl<cr>
 
 " NERDTree 设置
 " 开启/关闭文件树
