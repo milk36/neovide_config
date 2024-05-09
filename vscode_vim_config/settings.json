@@ -173,7 +173,41 @@
             "commands": [
                 "editor.action.moveLinesUpAction"
             ]
-        }
+        },
+        // 行首行尾移动
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        // 块间移动
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "}"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "{"
+            ]
+        },
     ],
     // "vim.operatorPendingModeKeyBindingsNonRecursive": [
     //     {
@@ -675,60 +709,6 @@
                     "command": "docthis.documentThis"
                 },
             ]
-        },
-        {
-            "key": "1",
-            "name": "openEditorAtIndex1",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex1"
-        },
-        {
-            "key": "2",
-            "name": "openEditorAtIndex2",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex2"
-        },
-        {
-            "key": "3",
-            "name": "openEditorAtIndex3",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex3"
-        },
-        {
-            "key": "4",
-            "name": "openEditorAtIndex4",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex4"
-        },
-        {
-            "key": "5",
-            "name": "openEditorAtIndex5",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex5"
-        },
-        {
-            "key": "6",
-            "name": "openEditorAtIndex6",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex6"
-        },
-        {
-            "key": "7",
-            "name": "openEditorAtIndex7",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex7"
-        },
-        {
-            "key": "8",
-            "name": "openEditorAtIndex8",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex8"
-        },
-        {
-            "key": "9",
-            "name": "openEditorAtIndex9",
-            "type": "command",
-            "command": "workbench.action.openEditorAtIndex9"
         },
     ],
     "editor.lineNumbers": "relative",

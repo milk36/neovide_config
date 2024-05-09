@@ -54,9 +54,13 @@ colorscheme gruvbox
 let mapleader=' ' 
 " 使用jj进入normal模式
 inoremap jj <Esc>`^
-" 修改 HJKL
-nnoremap H ^
-nnoremap L $
+" 选择模式下 i 退出 
+vnoremap i 
+" 修改HJKL 
+nnoremap H ^ 
+nnoremap L $ 
+vnoremap H ^ 
+vnoremap L $
 nnoremap J }
 nnoremap K {
 " 空格+w 保存文件
