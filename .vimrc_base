@@ -39,7 +39,6 @@ nnoremap <bs><bs> <Esc>:nohl<cr>
 " 测试映射设置
 nmap  <leader>t :echo "test key"
 
-
 " 快速切换窗口
 nnoremap <C-j> <C-w>j<cr>
 nnoremap <C-h> <C-w>h<cr>
