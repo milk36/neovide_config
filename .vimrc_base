@@ -20,11 +20,11 @@ let mapleader=' '
 " 使用jj进入normal模式
 inoremap jj <Esc>`^
 " 选择模式下 i 退出 
-vnoremap i 
+vnoremap i <Esc>`^
 " 修改HJKL 
-nnoremap H ^ 
-nnoremap L $ 
-vnoremap H ^ 
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
 vnoremap L $
 nnoremap J }
 nnoremap K {
