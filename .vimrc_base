@@ -1,0 +1,52 @@
+" ===================================================
+
+" 常用设置
+" 设置行号
+set number
+" 高亮搜索
+set hlsearch
+" 系统剪贴板
+set clipboard=unnamed
+" 相对当前行行数显示
+set relativenumber
+
+" 主题配色设置
+" colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+" set background=dark
+" colorscheme gruvbox 
+" 一些方便的映射
+" 设置leader键为空格
+let mapleader=' ' 
+" 使用jj进入normal模式
+inoremap jj <Esc>`^
+" 选择模式下 i 退出 
+vnoremap i 
+" 修改HJKL 
+nnoremap H ^ 
+nnoremap L $ 
+vnoremap H ^ 
+vnoremap L $
+nnoremap J }
+nnoremap K {
+" 空格+w 保存文件
+nnoremap <leader>w <Esc>:w<cr>
+" 空格+q 保存并退出文件
+nnoremap <leader>q <Esc>:wq<cr>
+" 关闭搜索高亮
+nnoremap <bs><bs> <Esc>:nohl<cr>
+
+" =====================================================================
+" 测试映射设置
+nmap  <leader>t :echo "test key"
+
+
+" 快速切换窗口
+nnoremap <C-j> <C-w>j<cr>
+nnoremap <C-h> <C-w>h<cr>
+nnoremap <C-k> <C-w>k<cr>
+nnoremap <C-l> <C-w>l<cr>
+" 反撤销
+nnoremap U <c-r><cr>
+" 清除高亮
+nnoremap <BS><BS> :nohl<cr>
+
