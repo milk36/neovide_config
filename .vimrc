@@ -95,6 +95,8 @@ nmap <leader><leader>s <Plug>(easymotion-s2)
 " 测试映射设置
 nmap  <leader>t :echo "test key"
 
+" 切换到下一个buff文件
+nnoremap <Tab> :bn<CR>
 
 " 快速切换窗口
 nnoremap <C-j> <C-w>j<cr>
